@@ -1,0 +1,215 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VV Metamark Design System */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 195 96% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 195 96% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 195 96% 14%;
+
+    --primary: 31 100% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 197 87% 44%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 25 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 31 100% 52%;
+
+    --radius: 0.5rem;
+
+    /* VV Metamark Brand Colors */
+    --vv-primary: 31 100% 52%; /* #FFB703 */
+    --vv-blue: 197 87% 44%; /* #219EBC */
+    --vv-orange: 25 100% 50%; /* #FB8500 */
+    --vv-dark: 195 96% 14%; /* #023047 */
+    --vv-white: 0 0% 100%; /* #FFFFFF */
+  }
+
+  .dark {
+    --background: 195 96% 14%;
+    --foreground: 0 0% 100%;
+
+    --card: 195 96% 14%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 195 96% 14%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 31 100% 52%;
+    --primary-foreground: 195 96% 14%;
+
+    --secondary: 197 87% 44%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 25 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 31 100% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-gesta;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom VV Metamark Utilities */
+@layer utilities {
+  .text-vv-primary {
+    color: hsl(var(--vv-primary));
+  }
+  
+  .text-vv-blue {
+    color: hsl(var(--vv-blue));
+  }
+  
+  .text-vv-orange {
+    color: hsl(var(--vv-orange));
+  }
+  
+  .text-vv-dark {
+    color: hsl(var(--vv-dark));
+  }
+  
+  .bg-vv-primary {
+    background-color: hsl(var(--vv-primary));
+  }
+  
+  .bg-vv-blue {
+    background-color: hsl(var(--vv-blue));
+  }
+  
+  .bg-vv-orange {
+    background-color: hsl(var(--vv-orange));
+  }
+  
+  .bg-vv-dark {
+    background-color: hsl(var(--vv-dark));
+  }
+  
+  .border-vv-primary {
+    border-color: hsl(var(--vv-primary));
+  }
+
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+}
+
+/* Hero Slider Animations */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll Down Arrow Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.bounce-arrow {
+  animation: bounce 2s infinite;
+}
+
+/* Portfolio Grid Hover Effects */
+.portfolio-item {
+  transition: all 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-overlay {
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
